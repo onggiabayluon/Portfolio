@@ -1,35 +1,32 @@
-import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
-import Link from './Link'
-import SectionContainer from './SectionContainer'
+import siteMetadata from '@/data/siteMetadata'
 import Footer from './Footer'
+import Image from './Image'
+import Link from './Link'
 import MobileNav from './MobileNav'
+import SectionContainer from './SectionContainer'
 import ThemeSwitch from './ThemeSwitch'
 
 const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between py-10">
+        <header className="flex items-center justify-between pt-5 pb-12">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
-                <div className="mr-3">
-                  <Logo />
-                </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
+                <Image
+                  width={45}
+                  height={45}
+                  className="aspect-square rounded-full object-cover"
+                  src="/static/images/me_lowpoly_v1_u.jpg"
+                  alt="DucHuy's Profile"
+                />
               </div>
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
+            <div className="hidden sm:flex">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}

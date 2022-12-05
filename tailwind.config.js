@@ -25,11 +25,45 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['Outfit', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.cyan,
         gray: colors.neutral,
+        discord: {
+          darkTheme: {
+            DEFAULT: '#7289da',
+            light: '#ffffff',
+            visited: '#99aab5',
+            dark: '#2c2f33',
+            darker: '#23272a',
+          },
+          lightTheme: {
+            DEFAULT: '#7289da',
+            light: '#ffffff',
+            gray: '#99aab5',
+            dark: '#2c2f33',
+            darker: '#23272a',
+          },
+        },
+        blue: {
+          light: '#ffffff',
+          DEFAULT: '#7289da',
+          dark: '#2c2f33',
+          darker: '#23272a',
+        },
+        title: {
+          light: '#ffffff',
+          dark: '#FDFDFD',
+        },
+        p: {
+          light: '#000000',
+          dark: '#979798',
+        },
+        unImportant: {
+          light: '#9B9E9E',
+          dark: '#979798',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -45,7 +79,7 @@ module.exports = {
             h1: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.900'),
+              color: theme('colors.unImportant.dark'),
             },
             h2: {
               fontWeight: '700',

@@ -1,7 +1,8 @@
-import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { PageSEO } from '@/components/SEO'
+import Transition from '@/components/Transition'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
-import { PageSEO } from '@/components/SEO'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 export const POSTS_PER_PAGE = 5
 
@@ -18,7 +19,7 @@ export async function getStaticProps() {
 
 export default function Blog({ posts, initialDisplayPosts, pagination }) {
   return (
-    <>
+    <Transition>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
       <ListLayout
         posts={posts}
@@ -26,6 +27,6 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
         pagination={pagination}
         title="All Posts"
       />
-    </>
+    </Transition>
   )
 }
