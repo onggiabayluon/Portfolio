@@ -180,16 +180,42 @@ function Introduction() {
       <div className="flex flex-row justify-between">
         <motion.div
           initial={{ x: '-100px', opacity: 0.4 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring' }}
+          // animate={{ x: 0, opacity: 1 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              type: 'spring',
+            },
+          }}
+          exit={{
+            x: '-100px',
+            opacity: 0.4,
+            transition: {
+              type: 'tween',
+            },
+          }}
         >
           <LeftDescription />
         </motion.div>
         {/* Right Card */}
         <motion.div
           initial={{ x: '100px', opacity: 0.4 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring' }}
+          // animate={{ x: 0, opacity: 1 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              type: 'spring',
+            },
+          }}
+          exit={{
+            x: '100px',
+            opacity: 0.4,
+            transition: {
+              type: 'tween',
+            },
+          }}
         >
           <RightIntroCard />
         </motion.div>
