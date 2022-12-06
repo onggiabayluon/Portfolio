@@ -137,7 +137,7 @@ function LeftDescription() {
     >
       <div className="xl:pr-28">
         {/* Left Sessions */}
-        <h1 className="mb-12 text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+        <h1 className="my-title-theme mb-12 text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
           Howdy, fellow!
           <span className="ml-5">
             <Image
