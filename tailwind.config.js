@@ -11,6 +11,7 @@ module.exports = {
     './layouts/**/*.js',
     './lib/**/*.js',
     './data/**/*.mdx',
+    './data/**/default.md',
   ],
   darkMode: 'class',
   theme: {

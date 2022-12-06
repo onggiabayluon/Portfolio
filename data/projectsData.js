@@ -12,6 +12,24 @@ look of its final form`,
     imgSrc: '/static/images/portfolio.png',
     href: '/blog/portfolio-design',
   },
+  {
+    title: 'Bus App',
+    description: `Bus booking website using java spring`,
+    imgSrc: '/static/images/busapp.jpg',
+    href: '/blog/bus-app',
+  },
+  {
+    title: 'Nodejs Manga Website',
+    description: `The purpose of this website is for learning Nodejs, Docker, Cloudflare, AWS S3, Mongodb and Nginx`,
+    imgSrc: '/static/images/first-starter-nodejs.jpg',
+    href: '/blog/first-starter-nodejs',
+  },
+  {
+    title: 'Coffee management system',
+    description: `A project using java to improving the productivity and efficiency of your work.`,
+    imgSrc: '/static/images/coffe-management-system-2.png',
+    href: '/blog/coffe-management-system',
+  },
 ]
 
 export default projectsData

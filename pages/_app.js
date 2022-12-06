@@ -2,7 +2,8 @@ import '@/css/prism.css'
 import '@/css/tailwind.css'
 import 'katex/dist/katex.css'
 
-import '@fontsource/inter/variable-full.css'
+// import '@fontsource/inter/variable-full.css'
+import '@fontsource/outfit'
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
