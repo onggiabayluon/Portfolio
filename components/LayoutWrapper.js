@@ -1,6 +1,6 @@
 import headerNavLinks from '@/data/headerNavLinks'
 import siteMetadata from '@/data/siteMetadata'
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { LayoutGroup, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import Footer from './Footer'
 import Image from './Image'
@@ -9,9 +9,12 @@ import MobileNav from './MobileNav'
 import SectionContainer from './SectionContainer'
 import ThemeSwitch from './ThemeSwitch'
 
-const NavItem = ({ item, selected }) => {
+const NavItem = ({ item }) => {
+  const router = useRouter()
+  const selected = router.pathname === item.href
+
   return (
-    <motion.div animate={{ opacity: selected ? 1 : 0.75 }}>
+    <motion.div animate={{ opacity: selected ? 1 : 0.75 }} layout>
       <Link
         key={item.title}
         href={item.href}
@@ -27,16 +30,14 @@ const NavItem = ({ item, selected }) => {
 }
 
 const UnderlinedMenu = () => {
-  const router = useRouter()
-
   return (
     <div className="underlined-menu">
       <div className="hidden space-x-8 sm:flex">
-        <AnimateSharedLayout>
+        <LayoutGroup>
           {headerNavLinks.map((link) => (
-            <NavItem item={link} key={link.title} selected={router.pathname == link.href} />
+            <NavItem item={link} key={link.href} />
           ))}
-        </AnimateSharedLayout>
+        </LayoutGroup>
       </div>
     </div>
   )
