@@ -166,7 +166,7 @@ function LeftDescription() {
                 ],
                 autoStart: true,
                 loop: true,
-                delay: 50,
+                delay: 0,
               }}
             />
           </div>
@@ -223,14 +223,43 @@ function Introduction() {
   )
 }
 
+function CustomTransition({ MotionElement, variants, children, className }) {
+  return (
+    <MotionElement
+      variants={variants}
+      initial="initial"
+      whileInView="whileInView"
+      viewport={{ once: true }}
+      className={className}
+    >
+      {children}
+    </MotionElement>
+  )
+}
 function Posts({ posts }) {
+  const showVariants = {
+    initial: {
+      opacity: 0,
+      y: '50px',
+    },
+    whileInView: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeIn' },
+    },
+  }
   return (
     <ul className="divide-y divide-gray-200 dark:divide-gray-700">
       {!posts.length && 'No posts found.'}
       {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
         const { slug, date, title, summary, tags } = frontMatter
         return (
-          <li key={slug} className="py-12">
+          <CustomTransition
+            MotionElement={motion.li}
+            variants={showVariants}
+            key={slug}
+            className="py-12"
+          >
             <article>
               <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                 <dl>
@@ -269,7 +298,7 @@ function Posts({ posts }) {
                 </div>
               </div>
             </article>
-          </li>
+          </CustomTransition>
         )
       })}
     </ul>

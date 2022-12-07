@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { motion } from 'framer-motion'
 
-const Transition = ({ children }) => {
-  const variants = {
+const Transition = ({ children, className, easeIn = false, pageTransition = false }) => {
+  const pageTransitionVariants = {
     hidden: {
       opacity: 0,
       x: -200,
@@ -30,12 +30,22 @@ const Transition = ({ children }) => {
       },
     },
   }
+  const easeInVariants = {
+    initial: {
+      opacity: 0,
+    },
+    whileInView: {
+      opacity: 1,
+    },
+  }
+
   return (
     <motion.main
       initial="hidden"
       animate="enter"
       exit="exit"
-      variants={variants}
+      variants={pageTransitionVariants}
+      className={className}
       // transition={{ type: 'linear' }}
     >
       {children}
