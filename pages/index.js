@@ -49,9 +49,9 @@ function RightIntroCard() {
                 <Image
                   className="h-auto w-auto rounded-lg object-cover"
                   width="340"
-                  height="220"
+                  height="270"
                   // src="/static/images/me.jpg"
-                  src="/static/images/me_lowpoly_v1_u.jpg"
+                  src="/static/images/me_cartoon.png"
                   // src="https://weandthecolor.com/wp-content/uploads/2012/03/Alternate-Ending-Illustration-by-Matheus-Lopes-3454646.jpg"
                   alt="DucHuy's Profile Picture"
                   priority
